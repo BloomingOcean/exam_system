@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	
+	<!-- 继承父级项目 -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.3.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	
+	<groupId>com.aizhixin</groupId>
+	<artifactId>examination</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>examination</name>
+	<description>Demo project for Spring Boot</description>
+
+	<!-- 下面<dependencies>中各个jar包的版本号 -->
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<swagger.version>2.9.2</swagger.version>
+		<hikari-cp.version>2.6.0</hikari-cp.version>
+	</properties>
+
+
+	<dependencies>
+		<!-- JDBC -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		
+		<!-- mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
+		<!-- JPA -->
+		<!--<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>-->
+		
+		<!-- aop -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		
+		<!-- web -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- hikari -->
+		<dependency>
+			<groupId>hikari-cp</groupId>
+			<artifactId>hikari-cp</artifactId>
+			<version>${hikari-cp.version}</version>
+		</dependency>
+		
+		<!-- lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<!-- 子项目不一定依赖？？？ -->
+			<optional>true</optional>
+		</dependency>
+
+		<!-- Swagger -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${swagger.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${swagger.version}</version>
+		</dependency>
+		
+		<!-- 这个包是干嘛的 -->
+		<dependency>
+	        <groupId>javax.xml.bind</groupId>
+	        <artifactId>jaxb-api</artifactId>
+	    </dependency>
+		<!-- 上面三个包用于Swagger -->
+		
+		
+		<!-- 引入org.springframework.boot包 -->
+		<dependency>
+			<!-- 包名 -->
+			<groupId>org.springframework.boot</groupId>
+			<!-- 此包下的某个项目 -->
+			<artifactId>spring-boot-starter-test</artifactId>
+			<!-- 此包的作用范围 -->
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- 引入百度人脸识别jar包 -->
+		<dependency>
+    		<groupId>com.baidu.aip</groupId>
+    		<artifactId>java-sdk</artifactId>
+    		<version>4.8.0</version>
+		</dependency>
+		
+		
+	</dependencies>
+
+	<!-- <build>:编译设置 -->
+	<build>
+	<!-- 指定使用的插件 -->
+		<plugins>
+		
+			<!-- 插件 -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+		</plugins>
+		
+	</build>
+
+</project>
