@@ -1,0 +1,39 @@
+sys:
+  version: 0.1
+
+wx:
+  appId: wx8f615bc611845df9
+  appSecret: 4920c1f93f4a5d8747a4d1fb0df7d383
+
+server:
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: d:/Java/tmp/logs/access_log
+      pattern: '%h %l %u [%{yyyy-MM-dd HH:mm:ss.SSS}t] "%r" %s %b %D'
+      prefix: examination_access
+      suffix: .log
+    basedir: d:/Java/tmp/tmp
+
+logging.level.com.aizhixin.test5: DEBUG
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=UTF8&useSSL=false&rewriteBatchedStatements=true&serverTimezone=UTC
+    username: root
+    password: root
+    hikari:
+      auto-commit: false
+      minimum-idle: 2
+      maximum-pool-size: 10
+      connection-timeout: 10000
+      max-lifetime: 600000
+      idle-timeout: 60000
+      validation-timeout: 1000
+      leak-detection-threshold: 30000
+  liquibase:
+    change-log: classpath:liquibase/master.xml
+    default-schema: work
+    

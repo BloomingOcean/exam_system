@@ -1,0 +1,4 @@
+logging.level.com.aizhixin.examination: DEBUG
+
+sys:
+  version: 0.1
